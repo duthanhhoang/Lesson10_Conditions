@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var month = parseInt(prompt("Nhập tháng (1-12):")); // số nguyên: 123abc -> 123; abc123 -> NaN
+        // var month = +prompt("Nhập tháng (1-12):"); // số thực: 123abc -> NaN
+        // console.log(month);
+
+        // if (month == 1 || month === 3 || month === 5 || month === 7 || month === 8 || month === 10 || month === 12) {
+        //     console.log(`Tháng ${month} có 31 ngày.`); // backtick - template string
+        // } else if (month === 4 || month === 6 || month === 9 || month === 11) {
+        //     console.log("Tháng " + month + " có 30 ngày.");
+        // } else if (month === 2) {
+        //     console.log("Tháng 2 có 28 hoặc 29 ngày.");
+        // } else {
+        //     console.log("Tháng ko hợp lệ.");
+        // }
+        let days;
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                days = 31;
+                break;
+
+            case 2:
+                days = "28 hoặc 29";
+                break;
+
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                days = 30;
+                break;
+
+            default:
+                days = "không hợp lệ";13
+        }
+
+        document.write(`Tháng ${month} có ${days} ngày.`);
+
+
+
+
+    </script>
+</body>
+
+</html>
