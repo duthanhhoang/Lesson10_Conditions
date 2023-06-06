@@ -23,3 +23,23 @@
 11. Bài tập chọn món ăn: Viết một chương trình yêu cầu người dùng nhập vào một số từ 1 đến 5 đại diện cho các món ăn trong một thực đơn. Sử dụng cấu trúc switch case để hiển thị thông tin chi tiết về món ăn tương ứng.
 
 12. Bài tập đánh giá điểm số: Viết một chương trình yêu cầu người dùng nhập vào một số điểm từ 0 đến 100. Sử dụng cấu trúc switch case để đánh giá và in ra thông báo xếp loại tương ứng (A, B, C, D, F) dựa trên điểm số.
+
+
+## Bổ sung
+Bài toán "Tính số tuổi đã sống".
+
+Yêu cầu: Viết một chương trình trong ngôn ngữ JavaScript 
+để nhập vào ngày sinh và tính chính xác số tuổi đã sống của một người.
+
+Yêu cầu cụ thể:
+
+Yêu cầu người dùng nhập vào ngày sinh của mình (ngày, tháng, năm) và lưu giữ thông tin đó.
+Yêu cầu người dùng nhập vào ngày hiện tại (ngày, tháng, năm) và lưu giữ thông tin đó.
+Sử dụng cấu trúc điều kiện và phép tính để tính toán chính xác số tuổi đã sống theo năm, tháng và ngày.
+In ra kết quả số tuổi đã tính toán được.
+
+Yêu cầu đầu vào:
+    Ngày sinh của người dùng (ngày, tháng, năm).
+    Ngày hiện tại (ngày, tháng, năm).
+Yêu cầu đầu ra:
+    In ra chính xác số tuổi đã sống của người dùng (tuổi, tháng, ngày).
