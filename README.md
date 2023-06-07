@@ -34,3 +34,15 @@ a1      a2    a3
 a2 = (23000 * a1)/1
 
 a3 = (23000 * a1)/0.95
+
+
+<!-- Baby steps -->
+Chia nhỏ các bước ra để làm
+
+//login
+    - dựng giao diện
+        - form
+        - các dòng thông báo
+    - dựng database
+    - gửi request lên server
+    - xử lý request

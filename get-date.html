@@ -10,19 +10,100 @@
 
 <body>
     <input type="date" id="dateInput">
-    <button onclick="getSelectedDate()">Lấy ngày</button>
+    <input type="date" id="dateInput2">
+    <button onclick="getSelectedDate()">Tính tuổi</button>
 
     <script>
+        document.getElementById("dateInput").defaultValue = "2020-05-01"
+        document.getElementById("dateInput2").defaultValue = "2023-06-01"
         function getSelectedDate() {
-            let dateInput = document.getElementById("dateInput");
-            let selectedDate = new Date(dateInput.value);
-            let day = selectedDate.getDate();
-            let month = selectedDate.getMonth() + 1; // Lưu ý: tháng trong js bắt đầu từ 0 nên cần cộng thêm 1 
-            let year = selectedDate.getFullYear();
+            let dateInput = document.getElementById("dateInput"); //dd-mm-yyy : string
+            let selectedDate = new Date(dateInput.value); //object
+            let dayStart = selectedDate.getDate(); // lay ra ngay
+            let monthStart = selectedDate.getMonth() + 1; // Lưu ý: tháng trong js bắt đầu từ 0 nên cần cộng thêm 1 
+            let yearStart = selectedDate.getFullYear();
 
-            alert("Ngày đã chọn: " + day);
-            alert("Tháng đã chọn: " + month);
-            alert("Năm đã chọn: " + year);
+            let dateInput2 = document.getElementById("dateInput2"); //dd-mm-yyy : string
+            let selectedDate2 = new Date(dateInput2.value); //object
+            let dayEnd = selectedDate2.getDate(); // lay ra ngay
+            let monthEnd = selectedDate2.getMonth() + 1; // Lưu ý: tháng trong js bắt đầu từ 0 nên cần cộng thêm 1 
+            let yearEnd = selectedDate2.getFullYear();
+
+            let ageYear, ageMonth, ageDay;
+
+            // vd 5/2020 - 6/2023 -> 3 năm 1 tháng
+            // vd 8/2020 - 6/2023 -> 2 năm 10 tháng
+
+            //Tính year
+            if (monthEnd >= monthStart) {
+                ageYear = yearEnd - yearStart;
+            } else {
+                ageYear = yearEnd - yearStart - 1;
+                ageYear--;
+            }
+
+            //Tính tháng
+            if (monthEnd >= monthStart) {
+                ageMonth = monthEnd - monthStart;
+            } else {
+                ageMonth = 12 - monthStart + monthEnd;
+            }
+
+            //Tính ngày
+            if (dayEnd >= dayStart) {
+                ageDay = dayEnd - dayStart;
+            } else {
+                ageDay = (getDayOfMonth(monthEnd - 1) - dayStart) + dayEnd;
+                ageMonth--;
+                if (ageMonth < 0) {
+                    ageMonth = 11;
+                    ageYear--;
+                }
+            }
+
+            // Hiển thị
+            let str = "";
+            if (ageYear > 0) {
+                str += ageYear + " tuổi ";
+            }
+
+            if (ageMonth > 0) {
+                str += ageMonth + " tháng ";
+            }
+
+            if (ageDay > 0) {
+                str += ageDay + " ngày."
+            }
+
+            alert(str);
+        }
+
+
+        function getDayOfMonth(month) {
+            switch (month) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    days = 31;
+                    break;
+                case 2:
+                    days = 28;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    days = 30;
+                    break;
+                default:
+                    days = 30;
+            }
+
+            return days;
         }
     </script>
 
